@@ -80,6 +80,7 @@ void ZEDCamera::close(void)
 		grab_thread.join();
 	if (zed)
 	{
+		zed->disableTracking("./ZED_spatial_memory"); // Record an area file
 		zed->close();
 		delete zed;
 	}

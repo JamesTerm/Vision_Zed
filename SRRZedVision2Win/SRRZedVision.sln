@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartDashboard", "SmartDash
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartDashboardTester", "SmartDashboardTester\SmartDashboardTester.vcxproj", "{A473B9B5-F0B8-449C-828A-54FE6046645D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZED_Positional_Tracking", "positional tracking\build\ZED_Positional_Tracking.vcxproj", "{8F201D3C-A057-3951-99BD-73E6324A0221}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -142,6 +144,40 @@ Global
 		{A473B9B5-F0B8-449C-828A-54FE6046645D}.ReleaseCuda|Win32.Build.0 = ReleaseCuda|Win32
 		{A473B9B5-F0B8-449C-828A-54FE6046645D}.ReleaseCuda|x64.ActiveCfg = ReleaseCuda|x64
 		{A473B9B5-F0B8-449C-828A-54FE6046645D}.ReleaseCuda|x64.Build.0 = ReleaseCuda|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Debug|Win32.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Debug|x64.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Debug|x64.Build.0 = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda_Mkl_Tbb|Mixed Platforms.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda_Mkl_Tbb|Mixed Platforms.Build.0 = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda_Mkl_Tbb|Win32.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda_Mkl_Tbb|Win32.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda_Mkl_Tbb|x64.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda_Mkl_Tbb|x64.Build.0 = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda|Mixed Platforms.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda|Mixed Platforms.Build.0 = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda|Win32.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda|Win32.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda|x64.ActiveCfg = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.DebugCuda|x64.Build.0 = Debug|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Release|Mixed Platforms.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Release|Win32.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Release|x64.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.Release|x64.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda_Mkl_Tbb|Mixed Platforms.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda_Mkl_Tbb|Mixed Platforms.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda_Mkl_Tbb|Win32.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda_Mkl_Tbb|Win32.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda_Mkl_Tbb|x64.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda_Mkl_Tbb|x64.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda|Mixed Platforms.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda|Mixed Platforms.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda|Win32.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda|Win32.Build.0 = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda|x64.ActiveCfg = Release|x64
+		{8F201D3C-A057-3951-99BD-73E6324A0221}.ReleaseCuda|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

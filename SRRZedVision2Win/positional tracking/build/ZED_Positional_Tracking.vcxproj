@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8F201D3C-A057-3951-99BD-73E6324A0221}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ZED_Positional_Tracking</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Vision\zed_samples\positional tracking\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ZED_Positional_Tracking.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ZED_Positional_Tracking</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\include;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;E:\Vision\zed_samples\positional tracking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -g -O3</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\include;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;E:\Vision\zed_samples\positional tracking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\include;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;E:\Vision\zed_samples\positional tracking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files (x86)\ZED SDK\lib\sl_zed64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_input64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_core64.lib;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\x64\freeglut.lib;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\x64\glew32.lib;opengl32.lib;glu32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\cuda.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppial.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppicc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppicom.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppidei.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppif.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppig.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppim.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppist.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppisu.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppitc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\npps.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files (x86)/ZED SDK/lib;C:/Program Files (x86)/ZED SDK/lib/$(Configuration);C:/Program Files (x86)/ZED SDK/dependencies/freeglut_2.8/x64;C:/Program Files (x86)/ZED SDK/dependencies/freeglut_2.8/x64/$(Configuration);C:/Program Files (x86)/ZED SDK/dependencies/glew-1.12.0/x64;C:/Program Files (x86)/ZED SDK/dependencies/glew-1.12.0/x64/$(Configuration);C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Vision/zed_samples/positional tracking/build/Debug/ZED_Positional_Tracking.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Vision/zed_samples/positional tracking/build/Debug/ZED_Positional_Tracking.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\include;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;E:\Vision\zed_samples\positional tracking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -g -O3</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\include;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;E:\Vision\zed_samples\positional tracking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\ZED SDK\include;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\include;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include;E:\Vision\zed_samples\positional tracking\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files (x86)\ZED SDK\lib\sl_zed64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_input64.lib;C:\Program Files (x86)\ZED SDK\lib\sl_core64.lib;C:\Program Files (x86)\ZED SDK\dependencies\freeglut_2.8\x64\freeglut.lib;C:\Program Files (x86)\ZED SDK\dependencies\glew-1.12.0\x64\glew32.lib;opengl32.lib;glu32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\cuda.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppial.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppicc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppicom.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppidei.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppif.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppig.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppim.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppist.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppisu.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\nppitc.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\lib\x64\npps.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files (x86)/ZED SDK/lib;C:/Program Files (x86)/ZED SDK/lib/$(Configuration);C:/Program Files (x86)/ZED SDK/dependencies/freeglut_2.8/x64;C:/Program Files (x86)/ZED SDK/dependencies/freeglut_2.8/x64/$(Configuration);C:/Program Files (x86)/ZED SDK/dependencies/glew-1.12.0/x64;C:/Program Files (x86)/ZED SDK/dependencies/glew-1.12.0/x64/$(Configuration);C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v9.1/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Vision/zed_samples/positional tracking/build/Release/ZED_Positional_Tracking.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Vision/zed_samples/positional tracking/build/Release/ZED_Positional_Tracking.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Vision\zed_samples\positional tracking\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/Vision/zed_samples/positional tracking/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+E:\Programs\CMake\bin\cmake.exe "-HE:/Vision/zed_samples/positional tracking" "-BE:/Vision/zed_samples/positional tracking/build" --check-stamp-file "E:/Vision/zed_samples/positional tracking/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/Vision/zed_samples/positional tracking/CMakeLists.txt;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCCompiler.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCXXCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeRCCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\ZED SDK\zed-config-version.cmake;C:\Program Files (x86)\ZED SDK\zed-config.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLUT.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLEW.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindOpenGL.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Vision\zed_samples\positional tracking\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/Vision/zed_samples/positional tracking/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+E:\Programs\CMake\bin\cmake.exe "-HE:/Vision/zed_samples/positional tracking" "-BE:/Vision/zed_samples/positional tracking/build" --check-stamp-file "E:/Vision/zed_samples/positional tracking/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/Vision/zed_samples/positional tracking/CMakeLists.txt;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCCompiler.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCXXCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeRCCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\ZED SDK\zed-config-version.cmake;C:\Program Files (x86)\ZED SDK\zed-config.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLUT.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLEW.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindOpenGL.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Vision\zed_samples\positional tracking\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Vision\zed_samples\positional tracking\include\TrackingViewer.hpp" />
+    <ClInclude Include="E:\Vision\zed_samples\positional tracking\include\ZEDModel.hpp" />
+    <ClCompile Include="E:\Vision\zed_samples\positional tracking\src\TrackingViewer.cpp" />
+    <ClCompile Include="E:\Vision\zed_samples\positional tracking\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\Vision\zed_samples\positional tracking\build\ZERO_CHECK.vcxproj">
+      <Project>{58161C29-46DF-3E75-9B22-4E96C620AABA}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
