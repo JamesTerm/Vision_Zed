@@ -10,6 +10,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\TrackingViewer.hpp" />
+    <ClInclude Include="..\include\ZEDModel.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\TrackingViewer.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8F201D3C-A057-3951-99BD-73E6324A0221}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
@@ -44,9 +52,9 @@
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Vision\zed_samples\positional tracking\build\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ZED_Positional_Tracking.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ZED_Positional_Tracking</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
@@ -88,8 +96,9 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/Vision/zed_samples/positional tracking/build/Debug/ZED_Positional_Tracking.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/Vision/zed_samples/positional tracking/build/Debug/ZED_Positional_Tracking.pdb</ProgramDataBaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -133,56 +142,15 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/Vision/zed_samples/positional tracking/build/Release/ZED_Positional_Tracking.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/Vision/zed_samples/positional tracking/build/Release/ZED_Positional_Tracking.pdb</ProgramDataBaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+      <ProgramDataBaseFile>$(OutDir)$(TargetName).pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <CustomBuild Include="E:\Vision\zed_samples\positional tracking\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/Vision/zed_samples/positional tracking/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-E:\Programs\CMake\bin\cmake.exe "-HE:/Vision/zed_samples/positional tracking" "-BE:/Vision/zed_samples/positional tracking/build" --check-stamp-file "E:/Vision/zed_samples/positional tracking/build/CMakeFiles/generate.stamp"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/Vision/zed_samples/positional tracking/CMakeLists.txt;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCCompiler.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCXXCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeRCCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\ZED SDK\zed-config-version.cmake;C:\Program Files (x86)\ZED SDK\zed-config.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLUT.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLEW.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindOpenGL.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Vision\zed_samples\positional tracking\build\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/Vision/zed_samples/positional tracking/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-E:\Programs\CMake\bin\cmake.exe "-HE:/Vision/zed_samples/positional tracking" "-BE:/Vision/zed_samples/positional tracking/build" --check-stamp-file "E:/Vision/zed_samples/positional tracking/build/CMakeFiles/generate.stamp"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/Vision/zed_samples/positional tracking/CMakeLists.txt;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCCompiler.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeCXXCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Vision\zed_samples\positional tracking\build\CMakeFiles\3.10.3\CMakeRCCompiler.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\ZED SDK\zed-config-version.cmake;C:\Program Files (x86)\ZED SDK\zed-config.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLUT.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindGLEW.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindOpenGL.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Programs\CMake\share\cmake-3.10\Modules\FindCUDA\select_compute_arch.cmake;E:\Vision\zed_samples\positional tracking\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Vision\zed_samples\positional tracking\build\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="E:\Vision\zed_samples\positional tracking\include\TrackingViewer.hpp" />
-    <ClInclude Include="E:\Vision\zed_samples\positional tracking\include\ZEDModel.hpp" />
-    <ClCompile Include="E:\Vision\zed_samples\positional tracking\src\TrackingViewer.cpp" />
-    <ClCompile Include="E:\Vision\zed_samples\positional tracking\src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="E:\Vision\zed_samples\positional tracking\build\ZERO_CHECK.vcxproj">
-      <Project>{58161C29-46DF-3E75-9B22-4E96C620AABA}</Project>
-      <Name>ZERO_CHECK</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
