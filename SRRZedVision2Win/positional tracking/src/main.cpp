@@ -24,6 +24,9 @@
 ** and display camera motion in an OpenGL window. 		                **
 **************************************************************************/
 
+#pragma warning( disable : 4305)
+#pragma warning( disable : 4244)
+
 // Standard includes
 #include <stdio.h>
 #include <string.h>

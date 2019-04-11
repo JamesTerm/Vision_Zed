@@ -1,3 +1,6 @@
+#pragma warning( disable : 4305)
+#pragma warning( disable : 4244)
+
 #include "TrackingViewer.hpp"
 
 GLchar* VERTEX_SHADER =
