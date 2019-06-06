@@ -248,7 +248,7 @@ void ZEDCamera::saveSbSimage(std::string filename)
 	rightIm = slMat2cvMat(right);
 
 	cv::imshow("Saving Image", SbS);
-	cv::cvtColor(SbS, SbS, CV_RGBA2RGB);
+	cv::cvtColor(SbS, SbS, cv::COLOR_RGBA2RGB);
 
 	cv::imwrite(filename, SbS);
 }

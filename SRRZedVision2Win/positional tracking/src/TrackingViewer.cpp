@@ -235,13 +235,16 @@ void GLViewer::init(sl::MODEL camera_model) {
 		// show path from path
 		zedPath.clear();
 		sl::float3 clr(0.1f, 0.5f, 0.9f);
-		for (int i = 1; i < vecFilePath.size() - 2; i++) {
-			float fade = (i*1.f) / vecFilePath.size();
-			sl::float3 new_color = clr * fade;
-			zedPath.addPoint(vecFilePath[i - 1], new_color);
-			zedPath.addPoint(vecFilePath[i], new_color);
+		if (vecFilePath.size() > 2)
+		{
+			for (int i = 1; i < vecFilePath.size() - 2; i++) {
+				float fade = (i*1.f) / vecFilePath.size();
+				sl::float3 new_color = clr * fade;
+				zedPath.addPoint(vecFilePath[i - 1], new_color);
+				zedPath.addPoint(vecFilePath[i], new_color);
+			}
+			zedPath.pushToGPU();
 		}
-		zedPath.pushToGPU();
 		updateZEDposition = false;
 
 		// show detection points

@@ -49,7 +49,7 @@ static void onMouseCallback(int32_t event, int32_t x, int32_t y, int32_t flag, v
 	int x_int = (x * data->image.cols / data->_resize.width);
 	int y_int = (y * data->image.rows / data->_resize.height);
 
-	if (flag == CV_EVENT_FLAG_MBUTTON)
+	if (flag == cv::EVENT_FLAG_MBUTTON)
 	{	// middle button sets hit location
 		if (x_int < 0) x_int = -1;
 		if (x_int > data->image.cols) x_int = -1; 
@@ -65,18 +65,18 @@ static void onMouseCallback(int32_t event, int32_t x, int32_t y, int32_t flag, v
 		data->hit_y = -1;
 	}
 
-	if (flag == (CV_EVENT_FLAG_LBUTTON | CV_EVENT_FLAG_RBUTTON))
+	if (flag == (cv::EVENT_FLAG_LBUTTON | cv::EVENT_FLAG_RBUTTON))
 	{	// reset if both down
 		data->low.x = 255; data->low.y = 255; data->low.z = 255;
 		data->high.x = 0;  data->high.y = 0;  data->high.z = 0;
 		std::cout << "mouse pick reset." << std::endl;
 		data->update = true;
 	}
-	else if (event == CV_EVENT_LBUTTONDOWN) 
+	else if (event == cv::EVENT_LBUTTONDOWN) 
 	{	// make the range wider
 		//convert the img from color to hsv
 		cv::Mat hsv;
-		cv::cvtColor(data->image, hsv, CV_BGR2HSV);
+		cv::cvtColor(data->image, hsv, cv::COLOR_BGR2HSV);
 
 		// find our 9x9 area
 		int x_low = x_int - 4;
@@ -111,11 +111,11 @@ static void onMouseCallback(int32_t event, int32_t x, int32_t y, int32_t flag, v
 		//std::cout << std::endl;
 		data->update = true;
 	}
-	else if (flag == CV_EVENT_FLAG_RBUTTON)
+	else if (flag == cv::EVENT_FLAG_RBUTTON)
 	{	// show value at click
 		//convert the img from color to hsv
 		cv::Mat hsv;
-		cv::cvtColor(data->image, hsv, CV_BGR2HSV);
+		cv::cvtColor(data->image, hsv, cv::COLOR_BGR2HSV);
 
 		if (x_int < 0) x_int = 0;
 		if (x_int > data->image.cols) x_int = data->image.cols;

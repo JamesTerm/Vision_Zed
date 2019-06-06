@@ -14,7 +14,7 @@ ChessboardDetecter::~ChessboardDetecter() {}
 void ChessboardDetecter::detectBeacon(cv::Mat& view, sl::Mat* point_cloud, sl::Pose* camera_pose)
 {
 	bool found = cv::findChessboardCorners(view, boardSize, pointBuf,
-		CV_CALIB_CB_ADAPTIVE_THRESH | CV_CALIB_CB_FAST_CHECK | CV_CALIB_CB_NORMALIZE_IMAGE);
+		cv::CALIB_CB_ADAPTIVE_THRESH | cv::CALIB_CB_FAST_CHECK | cv::CALIB_CB_NORMALIZE_IMAGE);
 
 	if (found)                // If done with success,
 	{
@@ -22,7 +22,7 @@ void ChessboardDetecter::detectBeacon(cv::Mat& view, sl::Mat* point_cloud, sl::P
 		cv::Mat viewGray;
 		cv::cvtColor(view, viewGray, cv::COLOR_BGR2GRAY);
 		cv::cornerSubPix(viewGray, pointBuf, cv::Size(11, 11),
-			cv::Size(-1, -1), cv::TermCriteria(CV_TERMCRIT_EPS + CV_TERMCRIT_ITER, 30, 0.1));
+			cv::Size(-1, -1), cv::TermCriteria(cv::TermCriteria::Type::EPS + cv::TermCriteria::Type::COUNT, 30, 0.1));
 
 		/// min point
 		cv::Point2f minp((float)view.cols, (float)view.rows);

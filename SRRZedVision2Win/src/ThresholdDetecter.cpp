@@ -171,7 +171,7 @@ void ThresholdDetecter::detectRockSample(cv::Mat& frame, sl::Mat* point_cloud, s
 
 #else
 	//convert the img from color to hsv
-	cv::cvtColor(frame, hsv, CV_BGR2HSV);
+	cv::cvtColor(frame, hsv, cv::COLOR_BGR2HSV);
 
 	cv::GaussianBlur(hsv, hsv, cv::Size(5, 5), 0, 0);
 
@@ -188,7 +188,7 @@ void ThresholdDetecter::detectRockSample(cv::Mat& frame, sl::Mat* point_cloud, s
 #endif
 
 	/// Find contours
-	cv::findContours(binary, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0, 0));
+	cv::findContours(binary, contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_SIMPLE, cv::Point(0, 0));
 
 	// mask and display   
 	if (interactive_mode)
