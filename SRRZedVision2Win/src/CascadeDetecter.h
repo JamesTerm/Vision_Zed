@@ -25,9 +25,7 @@ private:
 	bool bShowImg;
 	bool interactive_mode;
 	bool cascade_loaded;
-	// Haar detection was removed in OpenCV 4 - considered legacy. 
-	// May need to resort to training dnn.
-#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR <= 3)
+#if defined(HAVE_CUDA) && defined(USE_CUDA)
 	cv::cuda::GpuMat frame_gpu, gray_gpu, hooksBuf_gpu;
 	cv::Ptr<cv::cuda::CascadeClassifier> cascade_gpu;
 #endif

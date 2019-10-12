@@ -49,7 +49,7 @@ static void onMouseCallback(int32_t event, int32_t x, int32_t y, int32_t flag, v
 	int x_int = (x * data->image.cols / data->_resize.width);
 	int y_int = (y * data->image.rows / data->_resize.height);
 
-	if (flag == cv::EVENT_FLAG_MBUTTON)
+	if (flag == CV_EVENT_FLAG_MBUTTON)
 	{	// middle button sets hit location
 		if (x_int < 0) x_int = -1;
 		if (x_int > data->image.cols) x_int = -1; 
@@ -65,18 +65,18 @@ static void onMouseCallback(int32_t event, int32_t x, int32_t y, int32_t flag, v
 		data->hit_y = -1;
 	}
 
-	if (flag == (cv::EVENT_FLAG_LBUTTON | cv::EVENT_FLAG_RBUTTON))
+	if (flag == (CV_EVENT_FLAG_LBUTTON | CV_EVENT_FLAG_RBUTTON))
 	{	// reset if both down
 		data->low.x = 255; data->low.y = 255; data->low.z = 255;
 		data->high.x = 0;  data->high.y = 0;  data->high.z = 0;
 		std::cout << "mouse pick reset." << std::endl;
 		data->update = true;
 	}
-	else if (event == cv::EVENT_LBUTTONDOWN) 
+	else if (event == CV_EVENT_LBUTTONDOWN) 
 	{	// make the range wider
 		//convert the img from color to hsv
 		cv::Mat hsv;
-		cv::cvtColor(data->image, hsv, cv::COLOR_BGR2HSV);
+		cv::cvtColor(data->image, hsv, CV_BGR2HSV);
 
 		// find our 9x9 area
 		int x_low = x_int - 4;
@@ -111,11 +111,11 @@ static void onMouseCallback(int32_t event, int32_t x, int32_t y, int32_t flag, v
 		//std::cout << std::endl;
 		data->update = true;
 	}
-	else if (flag == cv::EVENT_FLAG_RBUTTON)
+	else if (flag == CV_EVENT_FLAG_RBUTTON)
 	{	// show value at click
 		//convert the img from color to hsv
 		cv::Mat hsv;
-		cv::cvtColor(data->image, hsv, cv::COLOR_BGR2HSV);
+		cv::cvtColor(data->image, hsv, CV_BGR2HSV);
 
 		if (x_int < 0) x_int = 0;
 		if (x_int > data->image.cols) x_int = data->image.cols;
@@ -299,11 +299,7 @@ int main(int argc, char **argv) {
 
 	ThresholdDetecter *ThresholdDet = new ThresholdDetecter(HSV_low, HSV_high, interactive_mode);
 	ChessboardDetecter *ChessboardDet = new ChessboardDetecter(interactive_mode);
-
-#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR > 3)
-	std::cout << "--(!) DOH!! Haar dection removed in OpenCV 4. Using CPU." << std::endl;
-#endif
-#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR <= 3)
+#if defined(HAVE_CUDA) && defined(USE_CUDA)
 	CascadeDetecter *CascadeDet = new CascadeDetecter("data/SRR Samples/cascades/hook_cascade_gpu.xml", interactive_mode);
 #else
 	CascadeDetecter *CascadeDet = new CascadeDetecter("data/SRR Samples/cascades/hook_cascade_cpu.xml", interactive_mode);
@@ -416,7 +412,7 @@ int main(int argc, char **argv) {
 		printInfo(*ThresholdDet, *StereoCam);
 
 	unsigned __int64 cnt = 0;
-#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
+#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
 	cv::TickMeter tm;
 	cv::TickMeter tm2;
 #else
@@ -426,7 +422,7 @@ int main(int argc, char **argv) {
 
 	if (show_timing)
 	{
-#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
+#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
 		tm.start();
 #else
 		QueryPerformanceFrequency((PLARGE_INTEGER)&freq);
@@ -569,7 +565,7 @@ int main(int argc, char **argv) {
 		/** end of main video loop **/
 		if (show_timing)
 		{
-#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
+#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
 			tm.stop();
 			double detectionTime = tm.getTimeMilli();
 			double fps = 1000 / detectionTime;
@@ -580,7 +576,7 @@ int main(int argc, char **argv) {
 
 			if (cnt == 10)
 			{
-#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
+#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
 				std::cout << " fps = " << fps << " ms per frame = " << detectionTime << std::endl;
 #else
 				unsigned __int64 now;
