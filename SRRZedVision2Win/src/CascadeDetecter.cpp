@@ -7,7 +7,7 @@ CascadeDetecter::CascadeDetecter(const char* cascade_name, bool interactive)
 		interactive_mode(interactive),
 		bShowImg(false)
 {
-#if defined(HAVE_CUDA) && defined(USE_CUDA)
+#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR <= 3)
 	cascade_gpu = cv::cuda::CascadeClassifier::create(cascade_name);
 #else
 	loadCascade(cascade_name);
@@ -26,8 +26,10 @@ void CascadeDetecter::detectHookSample(cv::Mat& frame, sl::Mat* point_cloud, sl:
 {
 	cv::Mat frame_gray;
 
-#if defined(HAVE_CUDA) && defined(USE_CUDA)
+#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR <= 3)
 	
+	if (cascade_gpu == nullptr) return;
+
 	frame_gpu.upload(frame);
 
 	switch (frame_gpu.channels())

@@ -323,7 +323,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>USE_CUDA;WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\bin\deps\opencv_4_1_0_cuda_10_1\install\include;$(ZED_SDK_ROOT_DIR)\include;$(CUDA_PATH)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\bin\deps\opencv_4_1_0_cuda_10_1\install\include;$(ZED_SDK_ROOT_DIR)\include;$(CUDA_PATH_V10_1)\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>

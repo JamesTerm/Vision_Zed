@@ -299,7 +299,11 @@ int main(int argc, char **argv) {
 
 	ThresholdDetecter *ThresholdDet = new ThresholdDetecter(HSV_low, HSV_high, interactive_mode);
 	ChessboardDetecter *ChessboardDet = new ChessboardDetecter(interactive_mode);
-#if defined(HAVE_CUDA) && defined(USE_CUDA)
+
+#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR > 3)
+	std::cout << "--(!) DOH!! Haar dection removed in OpenCV 4. Using CPU." << std::endl;
+#endif
+#if defined(HAVE_CUDA) && defined(USE_CUDA) && (CV_VERSION_MAJOR <= 3)
 	CascadeDetecter *CascadeDet = new CascadeDetecter("data/SRR Samples/cascades/hook_cascade_gpu.xml", interactive_mode);
 #else
 	CascadeDetecter *CascadeDet = new CascadeDetecter("data/SRR Samples/cascades/hook_cascade_cpu.xml", interactive_mode);
@@ -412,7 +416,7 @@ int main(int argc, char **argv) {
 		printInfo(*ThresholdDet, *StereoCam);
 
 	unsigned __int64 cnt = 0;
-#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
+#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
 	cv::TickMeter tm;
 	cv::TickMeter tm2;
 #else
@@ -422,7 +426,7 @@ int main(int argc, char **argv) {
 
 	if (show_timing)
 	{
-#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
+#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
 		tm.start();
 #else
 		QueryPerformanceFrequency((PLARGE_INTEGER)&freq);
@@ -565,7 +569,7 @@ int main(int argc, char **argv) {
 		/** end of main video loop **/
 		if (show_timing)
 		{
-#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
+#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
 			tm.stop();
 			double detectionTime = tm.getTimeMilli();
 			double fps = 1000 / detectionTime;
@@ -576,7 +580,7 @@ int main(int argc, char **argv) {
 
 			if (cnt == 10)
 			{
-#if (CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) && !defined(OLDSCHOOL_TIMER)
+#if ((CV_VERSION_MAJOR == 3 && CV_VERSION_MINOR == 4) || (CV_VERSION_MAJOR >= 3)) && !defined(OLDSCHOOL_TIMER)
 				std::cout << " fps = " << fps << " ms per frame = " << detectionTime << std::endl;
 #else
 				unsigned __int64 now;
